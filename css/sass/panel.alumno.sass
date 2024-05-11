@@ -1,0 +1,208 @@
+$guinda: #a22c29
+
+.tarjetaDocumento
+	min-width: 31%
+	padding: 20px
+	background-color: #f2f2f2
+	display: flex
+	flex-flow: column wrap
+	justify-content: space-between
+	.descripcionDocumento
+		h6
+			font-weight: bold
+	form
+		button
+			border: 1px solid $guinda
+			color: $guinda
+			&:hover
+				border: 1px solid $guinda
+				background-color: $guinda
+				outline: none
+
+.estilosGeneralesButton
+	width: 100%
+	margin-top: 10px
+	padding: 10px
+	border: none
+	color: #fff
+	font-size: 16px
+	cursor: pointer
+	font-family: 'Raleway', sans-serif
+
+.toastContainer
+	.toast.motivo
+		width: 30%
+		right: 35%
+		top: 25%
+		section
+			display: flex
+			flex-flow: row wrap
+			justify-content: space-between
+			textarea
+				width: 100%
+				height: 123px
+				padding: 20px
+				border: 1px solid $guinda
+				line-height: 27px
+				resize: none
+			button
+				@extend .estilosGeneralesButton
+				width: 48%
+				&.solicitar_btn
+					background-color: #56bf39
+				&.cancelar_btn
+					background-color: #448cff
+			p
+				width: 100%
+				margin: 10px 0 0 0
+				text-align: left
+				font-size: 12px
+
+.filtros_registros
+	width: 100%
+	display: flex
+	flex-flow: row wrap
+	align-items: center
+	p
+		width: 11%
+	.formulario_filtros
+		width: 89%
+		display: flex
+		flex-flow: row wrap
+		justify-content: center
+		.filtro_item
+			margin: 0 3px
+			input, button, select
+				width: 100%
+			&.filtro_documento
+				width: 43%
+				select
+					padding: 5px 0
+					background-color: #f2f2f2
+					outline: none
+					border: none
+					border-radius: 3px
+					option
+						padding: 5px 0
+			&.filtro_noSolicitud
+				width: 15%
+				input
+					padding: 5px
+					border: 1px solid $guinda
+					border-radius: 3px
+			&.filtro_fecha
+				input
+					padding: 5px
+					border: 1px solid $guinda
+					border-radius: 3px
+			&.filtro_autorizacion
+				select
+					padding: 5px 0
+					background-color: #f2f2f2
+					outline: none
+					border: none
+					border-radius: 3px
+					option
+						padding: 5px 0
+			&.filtrar_btn
+				button
+					margin: 5px 0
+					padding: 5px
+					display: block
+					background-color: #fff
+					font-family: 'Raleway', sans-serif
+					color: #a22c29
+					border: 1px solid $guinda
+					font-size: 12px
+					cursor: pointer
+					&:hover
+						background-color: $guinda
+						color: #fff				
+
+body
+	line-height: 1.2
+
+main
+	.ventana
+		header
+			.titulo
+				font-family: 'Raleway', sans-serif
+				font-size: 22px
+				text-align: center
+				font-weight: bold
+				&::selection
+					background-color: #fff
+					color: $guinda
+		.mainmenu
+			ul
+				a
+					li
+						p
+							margin: 0
+		.resumen
+			.img
+				width: 20%
+				margin: 30px auto
+				img
+					width: 100%
+			p
+				width: 100%
+				margin-bottom: 25px
+				font-size: 20px
+				text-align: center
+		.solicitar
+			.recordatorio
+				width: 100%
+				display: flex
+				flex-flow: row wrap
+				justify-content: space-between
+			.panel
+				width: 100%
+				height: 83%
+				overflow: auto
+				.top
+					border: 0px solid rgba(0, 0, 0, 1)
+					margin: 0
+				.alert
+					margin: 0
+					&.loader
+						color: $guinda
+		.historial
+			.panel
+				width: 100%
+				height: 75%
+				overflow: auto
+				.registro
+					width: 100%
+					margin: 20px 0
+					padding: 20px 10px
+					display: flex
+					flex-flow: row wrap
+					align-items: center
+					background-color: #f2f2f2
+					p
+						width: 25%
+						text-align: center
+					span
+						width: 25%
+						margin: 0 auto
+						font-size: 30px
+						text-align: center
+						display: block
+						&.en_espera
+							color: grey
+						&.autorizado
+							color: #56bf39
+						&.cancelado
+							color: #ed3b3b
+					&:first-of-type
+						margin-top: 0
+			.encabezados
+				width: 100%
+				margin: 0
+				padding: 10px 0
+				display: flex
+				flex-flow: row wrap
+				justify-content: space-around
+				p
+					text-align: center

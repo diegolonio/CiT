@@ -1,0 +1,64 @@
+$guinda: #a22c29
+
+.estilosGeneralesInputs
+	width: 60%
+	margin: 0 auto
+	padding: 5px
+	border: none
+	border-bottom: 1px solid $guinda
+	font-size: 16px
+	outline: none
+
+.estilosGeneralesBotones
+	width: 50%
+	padding: 10px
+	border: 1px solid $guinda
+	background-color: #fff
+	color: $guinda
+	display: block
+	cursor: pointer
+	&:hover
+		background-color: $guinda
+		color: #fff
+
+main
+	.ventana
+		width: 450px
+		height: auto
+		h2
+			width: 100%
+			margin: 20px 0
+			text-align: center
+		.login
+			width: 100%
+			padding: 0 20px 20px 20px
+			form
+				width: 100%
+				display: flex
+				flex-flow: column wrap
+				input[type="text"]
+					@extend .estilosGeneralesInputs
+					margin-bottom: 20px
+				input[type="password"]
+					@extend .estilosGeneralesInputs
+					margin-bottom: 10px
+				button
+					@extend .estilosGeneralesBotones
+					margin: 10px auto 0 auto
+				.forgottenPassword
+					width: 100%
+					margin-top: 20px
+					text-align: center
+					a
+						color: #ccc
+						&:hover
+							color: $guinda
+			.registrate
+				width: 100%
+				margin-top: 10px
+				text-align: center
+				color: #ccc
+				a
+					color: #ccc
+					&:hover
+						color: $guinda

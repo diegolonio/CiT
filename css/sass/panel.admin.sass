@@ -1,0 +1,408 @@
+$guinda: #a22c29
+
+.estilosGeneralesBtnSolicitudes
+	width: 100%
+	margin-top: 10px
+	padding: 10px
+	border: none
+	color: #fff
+	font-size: 16px
+	cursor: pointer
+	font-family: 'Raleway', sans-serif
+
+.estilosGeneralesEncabezados
+	width: 100%
+	margin: 0
+	padding: 10px 0
+	display: flex
+	flex-flow: row wrap
+	justify-content: space-around
+
+.estilosGeneralesInputsRegistro
+	flex-grow: 1
+	margin: 10px
+	padding: 10px
+	border: none
+	border-radius: 5px
+	background-color: #f2f2f2
+	font-size: 14px
+	outline: none
+	text-align: center
+
+.estilosGeneralesInputConfig
+	padding: 10px 20px
+	text-align: center
+	font-size: 16px
+	border: none
+	border-bottom: 2px solid $guinda
+	outline: none
+
+.filtros_registros
+	width: 100%
+	display: flex
+	flex-flow: row wrap
+	align-items: center
+	form
+		width: 100%
+		display: flex
+		flex-flow: row wrap
+		justify-content: center
+		align-items: center
+		.filtro_item
+			margin: 0 3px
+			input, button, select
+				width: 100%
+			&.filtro_documento
+				width: 32%
+				select
+					padding: 5px 0
+					background-color: #f2f2f2
+					outline: none
+					border: none
+					border-radius: 3px
+					option
+						padding: 5px 0
+			&.filtro_boleta
+				width: 15%
+				input
+					padding: 5px
+					border: 1px solid $guinda
+					border-radius: 3px
+			&.filtro_noSolicitud
+				width: 15%
+				input
+					padding: 5px
+					border: 1px solid $guinda
+					border-radius: 3px
+			&.filtro_fecha
+				input
+					padding: 5px
+					border: 1px solid $guinda
+					border-radius: 3px
+			&.filtro_autorizacion
+				select
+					padding: 5px 0
+					background-color: #f2f2f2
+					outline: none
+					border: none
+					border-radius: 3px
+					option
+						padding: 5px 0
+
+.toastContainer
+	.toast.cancelar
+		top: 25%
+		.mensaje_rectificar
+			margin-bottom: 10px
+			line-height: 27px
+			font-size: 18px
+		.cancelar_aceptar
+			@extend .estilosGeneralesBtnSolicitudes
+			background-color: #56bf39
+		.cancelar_descartar
+			@extend .estilosGeneralesBtnSolicitudes
+			background-color: #448cff
+
+main
+	.ventana
+		.resumen
+			.img
+				width: 20%
+				margin: 30px auto
+				img
+					width: 100%
+			p
+				width: 100%
+				margin-bottom: 25px
+				font-size: 20px
+				text-align: center
+		.solicitudes
+			display: flex
+			flex-flow: row wrap
+			.filtros_registros
+				margin-bottom: 10px
+				p
+					width: 11%
+				.formulario_filtros
+					width: 89%
+					.filtro_documento
+						width: 45%
+			.panel
+				width: 100%
+				height: 82%
+				overflow: auto
+				display: flex
+				flex-flow: row wrap
+				justify-content: flex-start
+				align-items: flex-start
+				background-color: #f2f2f2
+				border-radius: 10px
+				.solicitud
+					width: 27%
+					margin: 20px
+					padding: 20px
+					background-color: white
+					border-radius: 10px
+					border: 1px solid rgba(0,0,0,0.2)
+					-webkit-box-shadow: 0px 0px 6px -1px rgba(0,0,0,0.26)
+					-moz-box-shadow: 0px 0px 6px -1px rgba(0,0,0,0.26)
+					box-shadow: 0px 0px 6px -1px rgba(0,0,0,0.26)
+					p
+						margin-bottom: 10px
+						line-height: 27px
+					.formulario_autorizar
+						width: 100%
+						display: flex
+						flex-direction: row wrap
+						justify-content: space-between
+						.autorizado_btn
+							@extend .estilosGeneralesBtnSolicitudes
+							width: 45%
+							background-color: #56bf39
+							border-radius: 3px
+							font-size: 11px
+							text-align: center
+						.cancelado_btn
+							@extend .estilosGeneralesBtnSolicitudes
+							width: 45%
+							background-color: #ed3b3b
+							border-radius: 3px
+							font-size: 11px
+							text-align: center
+		.historial
+			.encabezados
+				width: 95%
+				margin: 0 auto
+				padding-left: 10px
+				padding-right: 26px
+				@extend .estilosGeneralesEncabezados
+				& > *
+					width: 20%
+					text-align: center
+					font-size: 15px
+			.filtros_registros
+				.formulario_filtros
+					margin-top: 10px
+			.panel
+				width: 100%
+				height: 70%
+				overflow-x: auto
+				background-color: #f2f2f2
+				border-radius: 10px
+				.registro
+					width: 95%
+					height: 120px
+					margin: 20px auto
+					padding: 20px 10px
+					display: flex
+					flex-flow: row wrap
+					align-items: center
+					background-color: white
+					border-radius: 10px
+					border: 1px solid rgba(0,0,0,0.2)
+					-webkit-box-shadow: 0px 0px 6px -1px rgba(0,0,0,0.26)
+					-moz-box-shadow: 0px 0px 6px -1px rgba(0,0,0,0.26)
+					box-shadow: 0px 0px 6px -1px rgba(0,0,0,0.26)
+					p
+						width: 20%
+						text-align: center
+					span
+						width: 20%
+						margin: 0 auto
+						font-size: 30px
+						text-align: center
+						display: block
+						&.en_espera
+							color: grey
+						&.autorizado
+							color: green
+						&.cancelado
+							color: #ed3b3b
+					// &:first-of-type
+					// 	margin-top: 0
+		.administradores
+			.panel
+				width: 100%
+				height: 89%
+				padding: 20px
+				overflow: auto
+				display: flex
+				flex-flow: row wrap
+				justify-content: space-around
+				align-items: flex-start
+				background-color: #f2f2f2
+				border-radius: 10px
+				.administrador
+					width: 45%
+					padding: 20px
+					background-color: white
+					display: flex
+					flex-flow: column wrap
+					border-radius: 10px
+					border: 1px solid rgba(0,0,0,0.2)
+					-webkit-box-shadow: 0px 0px 6px -1px rgba(0,0,0,0.26)
+					-moz-box-shadow: 0px 0px 6px -1px rgba(0,0,0,0.26)
+					box-shadow: 0px 0px 6px -1px rgba(0,0,0,0.26)
+					p
+						width: 100%
+						line-height: 30px
+					button
+						@extend .estilosGeneralesBtnSolicitudes
+						&.alta_btn
+							background-color: #4caf45
+						&.baja_btn
+							background-color: #ed3b3b
+							&.not_allowed
+								cursor: not-allowed
+		.registrar
+			.panel
+				width: 100%
+				height: 89%
+				overflow: auto
+				.regadmin
+					margin: 0 auto
+					width: 70%
+					margin-top: 30px
+					display: flex
+					flex-flow: row wrap
+					// background-color: gold
+					input[type="text"]
+						@extend .estilosGeneralesInputsRegistro
+						&#codigo
+							width: 10%
+					input[type="password"]
+						@extend .estilosGeneralesInputsRegistro
+					input[type="email"]
+						@extend .estilosGeneralesInputsRegistro
+					.box_btn
+						width: 100%
+						margin-top: 10px
+						.registrarAdministradorBtn
+							display: flex
+							flex-flow: row wrap
+							justify-content: center
+							width: 40%
+							margin: 0 auto
+							padding: 10px
+							background-color: #fff
+							font-family: 'Raleway', sans-serif
+							color: #a22c29
+							border: 1px solid #a22c29
+							border-radius: 5px
+							cursor: pointer
+							&:hover
+								background-color: $guinda
+								color: #fff
+		.configuracion
+			.panel
+				width: 100%
+				height: 89%
+				overflow: auto
+				section
+					width: 100%
+					h3
+						width: 100%
+						text-align: center
+						font-size: 22px
+						font-weight: normal
+					.ventanaConsulta
+						margin-top: 30px
+						.encabezadosConsultaDatosAlumno
+							@extend .estilosGeneralesEncabezados
+							padding: 0
+							justify-content: space-around
+						.consultaDatosAlumno
+							width: 100%
+							max-height: 300px
+							margin-top: 20px
+							overflow-y: auto
+							.tablaDatosAlumno
+								margin: 10px 0
+								padding: 10px 0
+								display: flex
+								flex-flow: row wrap
+								justify-content: space-around
+								background-color: #f2f2f2
+					form
+						width: 100%
+						margin-top: 20px
+						div
+							width: 100%
+							display: flex
+							flex-flow: row wrap
+							justify-content: space-between
+							&.error, &.success
+								justify-content: center
+							&.buscadorAlumnoModificable
+								width: 100%
+								margin-bottom: 20px
+								display: flex
+								flex-flow: row wrap
+								justify-content: space-around
+								align-items: center
+								input[type="text"]
+									@extend .estilosGeneralesInputConfig
+									width: 75%
+									font-size: 14px
+								button
+									margin: 0
+							select
+								margin-left: 20px
+								flex-grow: 1
+							&.datosRegistrarAlumnoConfig
+								margin-top: 10px
+							&.cargarArchivoDatosAlumno
+								margin-bottom: 20px
+								input[type="file"]
+									margin: 0 auto
+							&.busquedaAlumno
+									input[type="text"]
+										@extend .estilosGeneralesInputConfig
+										width: 70%
+										margin: 0 auto
+									button
+										margin: 0 auto
+						button
+							width: 20%
+							margin: 0 auto
+							padding: 10px
+							background-color: #fff
+							font-family: 'Raleway', sans-serif
+							color: $guinda
+							border: 1px solid $guinda
+							cursor: pointer
+							&:hover
+								background-color: $guinda
+								color: #fff
+							&.modificarBtn
+								margin: 0 auto
+						fieldset
+							margin: 10px
+							padding: 20px
+							div
+								display: flex
+								flex-flow: row wrap
+								justify-content: space-between
+								div
+									width: 90%
+									&.editarBtn
+										width: 30px
+										height: 30px
+										display: flex
+										justify-content: center
+										align-items: center
+										border-radius: 3px
+										i
+											color: #c1c1c1
+										&:hover
+											background-color: $guinda
+											cursor: pointer
+											i
+												color: #fff
+									input[type="text"], input[type="password"], select
+										flex-grow: 1
+									input[type="text"], input[type="password"]
+										text-align: center
+										border: none
+										border-bottom: 2px solid $guinda
+										outline: none
